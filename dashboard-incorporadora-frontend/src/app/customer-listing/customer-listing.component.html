@@ -1,0 +1,39 @@
+<div class="form-group row mt-2 mb-2">
+  <div class="col-md-3">
+    <label class="col-form-label">Início:</label>
+    <input type="date" class="form-control">
+  </div>
+  
+  <div class="col-md-3">
+    <label class="col-form-label">Fim:</label>
+    <input type="date" class="form-control">
+  </div>
+
+  <div class="text-center col-md-6 my-auto">
+    <div>
+      <label>Ordenamento:</label>
+    </div>
+    
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options" checked>Menor Budget
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options">Maior Budget
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options">A-Z
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options">Z-A
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <app-customer-card></app-customer-card>
+  </div>
+</div>
+

@@ -2,13 +2,13 @@
 
 # compiled output
 /dashboard-incorporadora-frontend/dist
-/dashboard-incorporadora-frontend//tmp
+/dashboard-incorporadora-frontend/tmp
 /out-tsc
 # Only exists if Bazel was run
-/dashboard-incorporadora-frontend//bazel-out
+/dashboard-incorporadora-frontend/bazel-out
 
 # dependencies
-/dashboard-incorporadora-frontend//node_modules
+/dashboard-incorporadora-frontend/node_modules
 
 # profiling files
 /dashboard-incorporadora-frontend/chrome-profiler-events*.json
@@ -32,14 +32,14 @@
 /dashboard-incorporadora-frontend/.history/*
 
 # misc
-/dashboard-incorporadora-frontend//.sass-cache
-/dashboard-incorporadora-frontend//connect.lock
-/dashboard-incorporadora-frontend//coverage
-/dashboard-incorporadora-frontend//libpeerconnection.log
+/dashboard-incorporadora-frontend/.sass-cache
+/dashboard-incorporadora-frontend/connect.lock
+/dashboard-incorporadora-frontend/coverage
+/dashboard-incorporadora-frontend/libpeerconnection.log
 /dashboard-incorporadora-frontend/npm-debug.log
 /dashboard-incorporadora-frontend/yarn-error.log
 /dashboard-incorporadora-frontend/testem.log
-/dashboard-incorporadora-frontend//typings
+/dashboard-incorporadora-frontend/typings
 
 # System Files
 /dashboard-incorporadora-frontend/.DS_Store

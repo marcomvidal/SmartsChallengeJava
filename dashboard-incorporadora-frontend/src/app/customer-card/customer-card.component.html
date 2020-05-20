@@ -1,0 +1,13 @@
+<div class="card mt-2">
+  <div class="card-body row">
+    <div class="col-md-3 text-center">
+      <img class="card-picture-size" src="{{ customer.pictures[0].url }}">
+    </div>
+    <div class="col-md-9 my-auto">
+      <h5 class="card-title">{{ customer.name.first }} {{ customer.name.last }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ customer.email }}</h6>
+      <p class="card-text">Age: {{ customer.age }}</p>
+      <p class="card-text">Budget: R$ {{ customer.budget }}</p>
+    </div>
+  </div>
+</div>
