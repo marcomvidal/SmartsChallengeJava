@@ -18,4 +18,17 @@ public class Customer {
     public String longitude;
     public List<Contact> contactTimeline;
     public String channel;
+
+    public String getName() {
+        return this.name.first + " " + this.name.last;
+    }
+
+    public int budgetAsInt() {
+        String rawBudget = this.budget
+                .replace("$", "")
+                .replace(".", "")
+                .replace(",", "");
+
+        return Integer.parseInt(rawBudget);
+    }
 }

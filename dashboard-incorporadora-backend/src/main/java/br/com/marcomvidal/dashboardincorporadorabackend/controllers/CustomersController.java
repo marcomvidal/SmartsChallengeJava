@@ -1,5 +1,7 @@
 package br.com.marcomvidal.dashboardincorporadorabackend.controllers;
 
+import br.com.marcomvidal.dashboardincorporadorabackend.utilities.CustomersSorter;
+import br.com.marcomvidal.dashboardincorporadorabackend.utilities.OrderBy;
 import br.com.marcomvidal.dashboardincorporadorabackend.utilities.Paginator;
 import br.com.marcomvidal.dashboardincorporadorabackend.models.Customer;
 import br.com.marcomvidal.dashboardincorporadorabackend.services.CustomerService;
@@ -26,14 +28,24 @@ public class CustomersController {
     @Autowired
     private CustomerService service;
 
+    @Autowired
+    private CustomersSorter sorter;
+
     public CustomersController(CustomerService service) {
         this.service = service;
     }
 
     @GetMapping("")
-    public ResponseEntity<Page<Customer>> index(@RequestParam("page") int page) {
+    public ResponseEntity<Page<Customer>> index(
+            @RequestParam("page") int page,
+            @RequestParam("orderBy") Optional<String> orderBy) {
         try {
             List<Customer> customers = this.service.all();
+
+            if (orderBy.isPresent()) {
+                customers = sorter.orderBy(customers, orderBy.get());
+            }
+
             Paginator paginator = new Paginator(customers, 10);
 
             return new ResponseEntity<>(paginator.getPage(page), HttpStatus.OK);
