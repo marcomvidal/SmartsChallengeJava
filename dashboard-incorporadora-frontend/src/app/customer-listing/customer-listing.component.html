@@ -32,8 +32,8 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <app-customer-card></app-customer-card>
+  <div class="col-md-12" *ngFor="let customer of customers">
+    <app-customer-card [customer]="customer"></app-customer-card>
   </div>
 </div>
 

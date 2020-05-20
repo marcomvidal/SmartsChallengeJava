@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CustomerListingComponent } from './customer-listing/customer-listing.component';
 import { CustomerCardComponent } from './customer-card/customer-card.component';
 import { ModelModule } from './model/model.module';
@@ -16,6 +17,7 @@ import { ModelModule } from './model/model.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ModelModule
   ],
   providers: [],
