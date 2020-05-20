@@ -1,0 +1,46 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dashboard-incorporadora-frontend/dist
+/dashboard-incorporadora-frontend//tmp
+/out-tsc
+# Only exists if Bazel was run
+/dashboard-incorporadora-frontend//bazel-out
+
+# dependencies
+/dashboard-incorporadora-frontend//node_modules
+
+# profiling files
+/dashboard-incorporadora-frontend/chrome-profiler-events*.json
+/dashboard-incorporadora-frontend/speed-measure-plugin*.json
+
+# IDEs and editors
+/dashboard-incorporadora-frontend/.idea
+/dashboard-incorporadora-frontend/.project
+/dashboard-incorporadora-frontend/.classpath
+/dashboard-incorporadora-frontend/.c9/
+/dashboard-incorporadora-frontend/*.launch
+/dashboard-incorporadora-frontend/.settings/
+/dashboard-incorporadora-frontend/*.sublime-workspace
+
+# IDE - VSCode
+/dashboard-incorporadora-frontend/.vscode/*
+!/dashboard-incorporadora-frontend/.vscode/settings.json
+!/dashboard-incorporadora-frontend/.vscode/tasks.json
+!/dashboard-incorporadora-frontend/.vscode/launch.json
+!/dashboard-incorporadora-frontend/.vscode/extensions.json
+/dashboard-incorporadora-frontend/.history/*
+
+# misc
+/dashboard-incorporadora-frontend//.sass-cache
+/dashboard-incorporadora-frontend//connect.lock
+/dashboard-incorporadora-frontend//coverage
+/dashboard-incorporadora-frontend//libpeerconnection.log
+/dashboard-incorporadora-frontend/npm-debug.log
+/dashboard-incorporadora-frontend/yarn-error.log
+/dashboard-incorporadora-frontend/testem.log
+/dashboard-incorporadora-frontend//typings
+
+# System Files
+/dashboard-incorporadora-frontend/.DS_Store
+/dashboard-incorporadora-frontend/Thumbs.db
