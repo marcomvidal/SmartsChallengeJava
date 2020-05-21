@@ -1,6 +1,10 @@
 package br.com.marcomvidal.dashboardincorporadorabackend.models;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Customer {
     public String _id;
@@ -30,5 +34,14 @@ public class Customer {
                 .replace(",", "");
 
         return Integer.parseInt(rawBudget);
+    }
+
+    // "Wed Aug 24 2016 05:53:06 GMT+0000"
+    // Wed, 4 Jul 2001 12:08:56 -0700
+    public Date registeredAsDate() throws ParseException {
+        String[] splittedData = this.registered.split(" ");
+        String dateAsString = splittedData[3] + "/" + splittedData[1] + "/" + splittedData[2];
+
+        return new SimpleDateFormat("yyyy/MMM/dd", Locale.ENGLISH).parse(dateAsString);
     }
 }

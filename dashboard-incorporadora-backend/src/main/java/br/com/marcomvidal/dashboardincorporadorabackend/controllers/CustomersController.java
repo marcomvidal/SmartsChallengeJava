@@ -1,5 +1,6 @@
 package br.com.marcomvidal.dashboardincorporadorabackend.controllers;
 
+import br.com.marcomvidal.dashboardincorporadorabackend.utilities.CustomersFilter;
 import br.com.marcomvidal.dashboardincorporadorabackend.utilities.CustomersSorter;
 import br.com.marcomvidal.dashboardincorporadorabackend.utilities.OrderBy;
 import br.com.marcomvidal.dashboardincorporadorabackend.utilities.Paginator;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,6 +33,9 @@ public class CustomersController {
     @Autowired
     private CustomersSorter sorter;
 
+    @Autowired
+    private CustomersFilter filter;
+
     public CustomersController(CustomerService service) {
         this.service = service;
     }
@@ -38,7 +43,9 @@ public class CustomersController {
     @GetMapping("")
     public ResponseEntity<Page<Customer>> index(
             @RequestParam("page") int page,
-            @RequestParam("orderBy") Optional<String> orderBy) {
+            @RequestParam("orderBy") Optional<String> orderBy,
+            @RequestParam("startDate") Optional<String> startDate,
+            @RequestParam("endDate") Optional<String> endDate) {
         try {
             List<Customer> customers = this.service.all();
 
@@ -46,10 +53,18 @@ public class CustomersController {
                 customers = sorter.orderBy(customers, orderBy.get());
             }
 
+            if (startDate.isPresent()) {
+                customers = filter.byStartDate(customers, startDate.get());
+            }
+
+            if (endDate.isPresent()) {
+                customers = filter.byEndDate(customers, endDate.get());
+            }
+
             Paginator paginator = new Paginator(customers, 10);
 
             return new ResponseEntity<>(paginator.getPage(page), HttpStatus.OK);
-        } catch (IOException exception) {
+        } catch (Exception exception) {
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, exception.getMessage());
         }
     }
