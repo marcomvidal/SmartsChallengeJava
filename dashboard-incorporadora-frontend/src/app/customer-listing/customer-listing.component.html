@@ -1,32 +1,31 @@
 <div class="form-group row mt-2 mb-2">
-  <div class="col-md-3">
+  <div class="col-lg-3">
     <label class="col-form-label">Início:</label>
-    <input type="date" class="form-control">
+    <input [(ngModel)]="startDate" type="date" class="form-control" (change)="filterByDate()">
   </div>
   
-  <div class="col-md-3">
+  <div class="col-lg-3">
     <label class="col-form-label">Fim:</label>
-    <input type="date" class="form-control">
+    <input [(ngModel)]="endDate" type="date" class="form-control" (change)="filterByDate()">
   </div>
 
-  <div class="text-center col-md-6 my-auto">
+  <div class="text-center col-lg-4 my-auto">
     <div>
       <label>Ordenamento:</label>
     </div>
     
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-secondary active">
-        <input type="radio" name="options" checked>Menor Budget
-      </label>
-      <label class="btn btn-secondary">
-        <input type="radio" name="options">Maior Budget
-      </label>
-      <label class="btn btn-secondary">
-        <input type="radio" name="options">A-Z
-      </label>
-      <label class="btn btn-secondary">
-        <input type="radio" name="options">Z-A
-      </label>
+    <app-order-buttons (changeOrderEvent)="changeOrder($event)"></app-order-buttons>
+  </div>
+
+  <div class="text-center col-lg-2">
+    <div>
+      <label>Página:</label>
+    </div>
+
+    <div>
+      <select #selectedPage class="form-control" (change)="changePage(selectedPage.value)">
+        <option *ngFor="let page of pages; index as i; first as isFirst" value="{{ i }}">{{ i }}</option>
+      </select>
     </div>
   </div>
 </div>

@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { Customer } from './model/Customer';
 import { Page } from './model/Page';
-import { map } from 'rxjs/operators';
+import { ServiceRequest } from './ServiceRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +16,16 @@ export class CustomersService {
     this.url = `${environment.url}/customers`;
   }
 
-  getAll(page: number): Observable<Customer[]> {
-    return this.http
-      .get<Page>(`${this.url}?page=${page}`)
-      .pipe(map(page => page.content));
+  getAll(request: ServiceRequest): Observable<Page>{
+    return this.http.get<Page>(this.formatUrl(request));
+  }
+
+  private formatUrl(request: ServiceRequest) {
+    let url: string = `${this.url}?page=${request.page}&orderBy=${request.order}`;
+    url = request.startDate != undefined ? `${url}&startDate=${request.startDate}` : url;
+    url = request.endDate != undefined ? `${url}&endDate=${request.endDate}` : url;
+
+    console.log(url);
+    return url;
   }
 }

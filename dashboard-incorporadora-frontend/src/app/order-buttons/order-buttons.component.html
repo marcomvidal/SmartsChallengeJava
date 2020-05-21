@@ -1,0 +1,6 @@
+<div class="btn-group btn-group-toggle" data-toggle="buttons" >
+  <label class="btn btn-secondary" *ngFor="let button of buttons">
+    <input type="radio" name="options" value="{{ button.value }}" (click)="changeOrder(button.denomination)">
+    {{ button.label }}
+  </label>
+</div>
