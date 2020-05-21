@@ -1,7 +1,7 @@
 # SmartsChallenge - Back-End
 API REST de acesso aos dados do sistema da incorporadora. Obtém os dados de outro
 webservice e dispõe de funcionalidades de filtragem e ordenação.<br>
-Utiliza arquitetura MVC e usa conceitos funcionais e de orientação a objetos.
+Utiliza arquitetura MVC e conceitos de orientação a objetos.
 
 ## Tecnologias usadas
 - Java 14

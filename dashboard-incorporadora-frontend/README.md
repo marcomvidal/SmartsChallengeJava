@@ -1,6 +1,6 @@
 # SmartsChallenge - Front-End
 Interface web de acesso aos dados do sistema da incorporadora.
-Utiliza arquitetura MVVM e usa conceitos de orientação a objetos.
+Utiliza arquitetura MVVM e conceitos de orientação a objetos.
 
 ## Tecnologias usadas
 - TypeScript 3.8
