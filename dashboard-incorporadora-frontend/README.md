@@ -1,6 +1,5 @@
 # SmartsChallenge - Front-End
-Interface web de acesso aos dados do sistema da incorporadora.
-Utiliza arquitetura MVVM e conceitos de orientação a objetos.
+SPA (Single Page Application) de interface web de acesso aos dados do sistema da incorporadora.
 
 ## Tecnologias usadas
 - TypeScript 3.8
@@ -8,17 +7,17 @@ Utiliza arquitetura MVVM e conceitos de orientação a objetos.
 - Bootstrap 4.5
 - Node 12
 
-## Utilização
-Este projeto exige o Node.js na versão 12 para rodar. Para iniciá-lo, entre
-no diretório do projeto com a linha de comando, instale as dependências necessárias
-e execute o projeto com os comandos abaixo:
-```
-npm install
-ng serve
-```
-A aplicação deve ser então acessada em `http://localhost:4200`.
+## Setup
+1. Instale o Node 12 ou superior;
+2. Restaure as dependências do NPM instaladas em `dashboard-incorporadora-backend` com o comando `npm install`.
+
+## Execução
+A aplicação pode ser acessada em `http://localhost:4200`.
 
 ## Objetos de estudos
 - Orientação a objetos
 - TypeScript
 - Integração com API REST
+
+## Screenshots
+* [Seleção de filmes](https://raw.githubusercontent.com/marcomvidal/SmartsChallengeJava/master/screenshot_listagem.png)
